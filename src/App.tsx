@@ -13,17 +13,19 @@ type PlanetProps = {
 
 const Planet: React.FC<PlanetProps> = ({name, orbitalPeriod, index}) => {
   const animationDuration = `${orbitalPeriod}s`;
+  const zIndexClassName = `zi-${20 - index}`;
   const planetClassName = `${name} planet`;
-  const orbitSize = `${(index+1)*14}vmin`;
+  const orbitSize = `${(index+1)*12}vmin`;
 
   return (
-    <div className="orbit" style={{width: orbitSize, height: orbitSize, animation: `spin ${animationDuration} linear infinite`}}>
+    <div className={`${zIndexClassName} orbit`} style={{width: orbitSize, height: orbitSize, animation: `spin ${animationDuration} linear infinite`}}>
       <div className="planet-holder">
         <div className={planetClassName} />
       </div>
     </div>
   );
 };
+
 
 
 
