@@ -65,6 +65,42 @@ table {
   border-collapse: collapse;
 }
 
+.scrollable-table {
+  max-height: 40vh;
+  overflow-y: auto;
+  scrollbar-width: thin; /* for Firefox */
+  scrollbar-color: rgba(77, 168, 218, 0.5) var(--background-color); /* for Firefox */
+}
+
+/* for Chrome, Safari and Opera */
+.scrollable-table::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.scrollable-table::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+/* Handle */
+.scrollable-table::-webkit-scrollbar-thumb {
+  background: rgba(77, 169, 218, 0.103);
+}
+
+/* Handle on hover */
+.scrollable-table::-webkit-scrollbar-thumb:hover {
+  background: rgba(77, 168, 218, 0.7);
+}
+
+.scrollable-table:hover::-webkit-scrollbar-thumb {
+  background: rgba(77, 168, 218, 0.7);
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+  background: rgba(77, 169, 218, 0.103);
+  transition: background 0.1s ease-in-out;
+}
+
 table td {
   padding: 0.5em;
   border-bottom: 1px solid var(--secondary-color);

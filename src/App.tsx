@@ -233,112 +233,114 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
         />
       </div>
       <p>{selectedPlanet.description}</p>
-      <table>
-        <tr>
-          <td>
-            Surface Area
-          </td>
-          <td>
-            {selectedPlanet.surface_area}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Diameter
-          </td>
-          <td>
-            {selectedPlanet.diameter}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Mass
-          </td>
-          <td>
-            {selectedPlanet.mass}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Volume
-          </td>
-          <td>
-            {selectedPlanet.volume}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Revolution period
-          </td>
-          <td>
-            {selectedPlanet.revolution}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Rotation period
-          </td>
-          <td>
-            {selectedPlanet.rotation}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Natural satellites
-          </td>
-          <td>
-            {selectedPlanet.nat_sat}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Artificial satellites
-          </td>
-          <td>
-            {selectedPlanet.art_sat}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Composition
-          </td>
-          <td>
-            {selectedPlanet.composition}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Atmosphere
-          </td>
-          <td>
-            {selectedPlanet.atmosphere}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Surface temperature (facing away from the sun)
-          </td>
-          <td>
-            {selectedPlanet.surface_temp1}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Surface temperature (facing the sun)
-          </td>
-          <td>
-            {selectedPlanet.surface_temp2}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Distance from the sun
-          </td>
-          <td>
-            {selectedPlanet.sun_dist}
-          </td>
-        </tr>
-      </table>
+      <div className="scrollable-table">
+        <table>
+          <tr>
+            <td>
+              Surface Area
+            </td>
+            <td>
+              {selectedPlanet.surface_area}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Diameter
+            </td>
+            <td>
+              {selectedPlanet.diameter}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Mass
+            </td>
+            <td>
+              {selectedPlanet.mass}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Volume
+            </td>
+            <td>
+              {selectedPlanet.volume}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Revolution period
+            </td>
+            <td>
+              {selectedPlanet.revolution}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Rotation period
+            </td>
+            <td>
+              {selectedPlanet.rotation}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Natural satellites
+            </td>
+            <td>
+              {selectedPlanet.nat_sat}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Artificial satellites
+            </td>
+            <td>
+              {selectedPlanet.art_sat}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Composition
+            </td>
+            <td>
+              {selectedPlanet.composition}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Atmosphere
+            </td>
+            <td>
+              {selectedPlanet.atmosphere}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Surface temperature (facing away from the sun)
+            </td>
+            <td>
+              {selectedPlanet.surface_temp1}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Surface temperature (facing the sun)
+            </td>
+            <td>
+              {selectedPlanet.surface_temp2}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Distance from the sun
+            </td>
+            <td>
+              {selectedPlanet.sun_dist}
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   );
 };
