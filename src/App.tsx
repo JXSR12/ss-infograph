@@ -218,6 +218,8 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
   }
   return (
     <div className="sidebar slide-in">
+      <button onClick={onClose}><b>Close Information Board</b></button>
+      <br/>
       <h2 id="h2sidebar">{name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase()}</h2>
       <div className="sidebar-container">
         <img src={selectedPlanet.filepath} alt="alternative_text" width="480" height="360"/>
@@ -329,8 +331,6 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
           </td>
         </tr>
       </table>
-
-      <button onClick={onClose}>Close</button>
     </div>
   );
 };
@@ -363,7 +363,7 @@ const App = () => {
 
   return (
     <div className="solar-system">
-      <div className="sun" />
+      <div className="sun" onClick={() => handlePlanetClick("sun")}/>
       <video className="background-video" autoPlay loop muted>
         <source src="/assets/background.mp4" type="video/mp4" />
       </video>
