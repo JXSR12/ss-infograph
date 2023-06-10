@@ -80,6 +80,10 @@ const App = () => {
       <video className="background-video" autoPlay loop muted>
         <source src="/assets/background.mp4" type="video/mp4" />
       </video>
+      <audio autoPlay loop>
+        <source src="/assets/music (1).mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
       {planets.map((planet, index) => (
         <Planet 
           key={planet.name} 
