@@ -58,6 +58,8 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
       surface_temp1: "Approximately 5,500 °C (9,932 °F) at the photosphere",
       surface_temp2: "Approximately 15 million °C (27 million °F) at the core",
       sun_dist: "N/A (The Sun is the center of the solar system)",
+      width: "400",
+      height: "400"
     },
     {
       name: 'mercury',
@@ -210,6 +212,7 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
       surface_temp1: "Approximately 214 °C",
       surface_temp2: "Approximately 214 °C",
       sun_dist: "Approximately 4.5 billion km"
+      
     }
   ]
   const selectedPlanet = planetDetails.find((i) => i.name === name);
@@ -222,7 +225,12 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
       <br/>
       <h2 id="h2sidebar">{name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase()}</h2>
       <div className="sidebar-container">
-        <img src={selectedPlanet.filepath} alt="alternative_text" width="480" height="360"/>
+        <img
+          src={selectedPlanet.filepath}
+          alt="alternative_text"
+          width={selectedPlanet.width || 480}
+          height={selectedPlanet.height || 360}
+        />
       </div>
       <p>{selectedPlanet.description}</p>
       <table>
