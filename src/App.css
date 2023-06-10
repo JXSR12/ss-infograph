@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+/* App.css */
+:root {
+  --mercury-size: 0.8vmin;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.solar-system {
+  position: relative;
+  width: 95vmin;
+  height: 95vmin;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sun {
+  position: absolute;
+  width: 7vmin;
+  height: 7vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff0, #f80, #f00);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #666; /* Color and thickness of the ellipse */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planet-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.planet {
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Define each planet's styles here */
+/* Example: */
+
+.mercury {
+  width: var(--mercury-size);
+  height: var(--mercury-size);
+  background-color: #8B4513;
+}
+
+.venus {
+  width: calc(var(--mercury-size) * 1.5); 
+  height: calc(var(--mercury-size) * 1.5);
+  background-color: #FFD700;
+}
+
+.earth {
+  width: calc(var(--mercury-size) * 1.5); 
+  height: calc(var(--mercury-size) * 1.5);
+  background-color: #0000FF;
+}
+
+.mars {
+  width: calc(var(--mercury-size) * 1.1); 
+  height: calc(var(--mercury-size) * 1.1);
+  background-color: #B22222;
+}
+
+.jupiter {
+  width: calc(var(--mercury-size) * 4); 
+  height: calc(var(--mercury-size) * 4);
+  background-color: #DAA520;
+}
+
+.saturn {
+  width: calc(var(--mercury-size) * 3); 
+  height: calc(var(--mercury-size) * 3);
+  background-color: #D2691E;
+}
+
+.uranus {
+  width: calc(var(--mercury-size) * 2); 
+  height: calc(var(--mercury-size) * 2);
+  background-color: #40E0D0;
+}
+
+.neptune {
+  width: calc(var(--mercury-size) * 2); 
+  height: calc(var(--mercury-size) * 2);
+  background-color: #0000CD;
+}
+
+@keyframes spin {
+  0% { 
+    transform: translate(-50%, -50%) rotate(0deg); 
   }
-  to {
-    transform: rotate(360deg);
+  100% { 
+    transform: translate(-50%, -50%) rotate(360deg); 
   }
 }
