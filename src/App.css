@@ -128,9 +128,6 @@ button:hover {
   background-color: #2c8fd6;
 }
 
-/* The rest of your CSS follows... */
-
-
 .sun {
   position: absolute;
   width: 7vmin;
@@ -174,6 +171,10 @@ button:hover {
 .zi-20 { z-index: 20; }
 
 .orbit:hover{
+  border: 1px solid #f5f08f;
+}
+
+.sun:hover{
   border: 1px solid #f5f08f;
 }
 

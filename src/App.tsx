@@ -1,5 +1,3 @@
-// App.tsx
-
 import React, { useState } from 'react';
 import './App.css';
 import planetDetails from './planetDetails.json';
@@ -142,18 +140,10 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
           </tr>
           <tr>
             <td>
-              Surface temperature (facing away from the sun)
+              Average Surface Temperature
             </td>
             <td>
-              {selectedPlanet.surface_temp1}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Surface temperature (facing the sun)
-            </td>
-            <td>
-              {selectedPlanet.surface_temp2}
+              {selectedPlanet.surface_temp}
             </td>
           </tr>
           <tr>
