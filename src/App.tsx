@@ -267,7 +267,7 @@ const App = () => {
     <div className="solar-system">
       <div className="sun" onClick={() => handlePlanetClick("sun")}/>
       <video className="background-video" autoPlay loop muted>
-        <source src="/assets/background.mp4" type="video/mp4" />
+        <source src="/assets/fixed_background.mp4" type="video/mp4" />
       </video>
       {planets.map((planet, index) => (
         <Planet 
