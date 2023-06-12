@@ -19,10 +19,16 @@ const Planet: React.FC<PlanetProps> = ({ name, orbitalPeriod, index, onClick }) 
     { orbitSize: orbitSize },
     { orbitSize: `${parseInt(orbitSize) + 1.5}vmin` },
   ];
+  console.log(name, zIndexClassName)
 
   if (name === "asteroid") {
     return (
-      <div>
+      <div className={zIndexClassName} id="asteroidbelt"
+        style={{
+          width: `${parseInt(orbitSize) + 2}vmin`,
+          height: `${parseInt(orbitSize) + 2}vmin`
+        }}
+      >
         {belts.map((belt, index) => (
           <div
             key={index}
