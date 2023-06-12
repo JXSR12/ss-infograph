@@ -13,7 +13,31 @@ const Planet: React.FC<PlanetProps> = ({ name, orbitalPeriod, index, onClick }) 
   const animationDuration = `${orbitalPeriod}s`;
   const zIndexClassName = `zi-${20 - index}`;
   const planetClassName = `${name} planet`;
-  const orbitSize = `${(index + 1) * 12}vmin`;
+  const orbitSize = `${(index + 1) * 11}vmin`;
+  const belts = [
+    { orbitSize: `${parseInt(orbitSize) - 1.5}vmin` },
+    { orbitSize: orbitSize },
+    { orbitSize: `${parseInt(orbitSize) + 1.5}vmin` },
+  ];
+
+  if (name === "asteroid") {
+    return (
+      <div>
+        {belts.map((belt, index) => (
+          <div
+            key={index}
+            className="orbit-dot"
+            onClick={onClick} 
+            style={{
+              width: belt.orbitSize,
+              height: belt.orbitSize
+            }}
+          >
+          </div>
+        ))}
+      </div>
+    )
+  }
 
   return (
     <div
@@ -169,6 +193,7 @@ const App = () => {
     { name: 'venus', orbitalPeriod: (224.7 / 365.25) * earthOrbitalPeriodInSeconds },
     { name: 'earth', orbitalPeriod: earthOrbitalPeriodInSeconds },
     { name: 'mars', orbitalPeriod: (687 / 365.25) * earthOrbitalPeriodInSeconds },
+    { name: 'asteroid', orbitalPeriod: 10000},
     { name: 'jupiter', orbitalPeriod: (4332.59 / 365.25) * earthOrbitalPeriodInSeconds },
     { name: 'saturn', orbitalPeriod: (10759.22 / 365.25) * earthOrbitalPeriodInSeconds },
     { name: 'uranus', orbitalPeriod: (30688.5 / 365.25) * earthOrbitalPeriodInSeconds },
