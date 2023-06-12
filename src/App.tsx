@@ -212,7 +212,11 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
           <div>
             <ul className="justified">
               {selectedPlanet.fun_facts?.map((facts, index) => (
-                <li key={index}>{facts}</li>
+                <li key={index} 
+                    style={{"--bullet-color": getRandomPastelColor(), "--content": index} as React.CSSProperties}
+                    onMouseEnter={() => speak(facts)}>
+                  {facts}
+                </li>
               ))}
             </ul>
           </div>}
@@ -221,7 +225,16 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
   );
 };
 
+function speak(text: string) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  window.speechSynthesis.speak(utterance);
+}
 
+
+function getRandomPastelColor() {
+  const hue = Math.floor(Math.random() * 360);
+  return `hsl(${hue}, 100%, 80%)`;
+}
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);

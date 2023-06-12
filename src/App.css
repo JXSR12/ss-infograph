@@ -298,5 +298,51 @@ button:hover {
 }
 
 .justified {
-  text-align: justify;
+  list-style: none; 
+  padding: 0; 
+  margin: 0;
+  counter-reset: item;  /* Add this line to initialize the counter */
 }
+
+.justified li {
+  text-align: justify;
+  position: relative;
+  padding: 20px 20px 20px 50px; /* Add padding on the left to make space for the number */
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  border-radius: 5px;
+  max-width: 90%; /* Restrict the width of the card to avoid it taking full width */
+  margin-left: auto; /* Center the card */
+  margin-right: auto;
+}
+
+.justified li::before {
+  font-size: large;
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  left: 10px; /* Position the number within the card */
+  top: calc(50% - 10px);
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  padding: 2px;
+  text-align: center;
+  color: #474747;
+  font-weight: bolder;
+  background-color: #A3A0FB;
+  border-radius: 50%;
+}
+
+.justified li::before {
+  /* Other styles... */
+  background-color: var(--bullet-color);
+}
+
+.justified li:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+}
+
