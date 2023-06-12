@@ -92,6 +92,24 @@
     "sun_dist": "Approximately 228 million km"
   },
   {
+    "name": "the asteroid belt",
+    "filepath": "assets/asteroids.png",
+    "description": "The main asteroid belt of our solar system",
+    "surface_area": "-",
+    "diameter": "-",
+    "mass": "-",
+    "volume": "-",
+    "age": "4.5 billion years",
+    "revolution": "-",
+    "rotation": "-",
+    "nat_sat": "-",
+    "art_sat": "-",
+    "composition": "Composed of rock, stone, iron, and nickel",
+    "atmosphere": "-",
+    "surface_temp": "-73°C",
+    "sun_dist": "Approximately 329 - 478 million km"
+  },
+  {
     "name": "jupiter",
     "filepath": "assets/jupiter.png",
     "description": "Largest planet in the solar system with distinct bands and a turbulent atmosphere",
