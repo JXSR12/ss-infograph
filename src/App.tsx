@@ -22,8 +22,6 @@ const Planet: React.FC<PlanetProps> = ({ name, orbitalPeriod, index, onClick }) 
     { orbitSize: orbitSize },
     { orbitSize: `${parseInt(orbitSize) + 1.5}vmin` },
   ];
-  console.log(name, zIndexClassName)
-
   if (name === "the asteroid belt") {
     return (
       <div className={zIndexClassName} id="asteroidbelt"
@@ -80,6 +78,8 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
     return null; // Return null if the planet name is not found
   }
 
+  const hasMoons = parseInt(selectedPlanet.nat_sat) > 0;
+
   const handleAccordionClick = (section : any) => {
     setOpenSection(openSection === section ? "" : section);
   };
@@ -102,115 +102,120 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
           height={selectedPlanet.height || 360}
         />
       </div>
-      <p>{selectedPlanet.description}</p>
+      <p className="justified">{selectedPlanet.description}</p>
       <div>
         <button onClick={() => handleAccordionClick("Details")}><b>{openSection === "Details" ? "Hide Details" : "Show Details"}</b></button>
         {openSection === "Details" && (
           <div className="scrollable-table">
             <table>
-              <tr>
-                <td>
-                  Surface Area
-                </td>
-                <td>
-                  {selectedPlanet.surface_area}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Diameter
-                </td>
-                <td>
-                  {selectedPlanet.diameter}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Mass
-                </td>
-                <td>
-                  {selectedPlanet.mass}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Volume
-                </td>
-                <td>
-                  {selectedPlanet.volume}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Revolution period
-                </td>
-                <td>
-                  {selectedPlanet.revolution}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Rotation period
-                </td>
-                <td>
-                  {selectedPlanet.rotation}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Natural satellites
-                </td>
-                <td>
-                  {selectedPlanet.nat_sat}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Artificial satellites
-                </td>
-                <td>
-                  {selectedPlanet.art_sat}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Composition
-                </td>
-                <td>
-                  {selectedPlanet.composition}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Atmosphere
-                </td>
-                <td>
-                  {selectedPlanet.atmosphere}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Average Surface Temperature
-                </td>
-                <td>
-                  {selectedPlanet.surface_temp}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Distance from the sun
-                </td>
-                <td>
-                  {selectedPlanet.sun_dist}
-                </td>
-              </tr>
+              {selectedPlanet && selectedPlanet.name === "the asteroid belt" ? (
+                <>
+                  <tr>
+                    <td>Types of Asteroid</td>
+                    <td>{selectedPlanet.types?.map((type, index) => (
+                      <p key={index} className="justified">{type}</p>
+                    ))}</td>
+                  </tr>
+                  <tr>
+                    <td>Notable Asteroids</td>
+                    <td className="justified">{selectedPlanet.notable}</td>
+                  </tr>
+                  <tr>
+                    <td>Composition</td>
+                    <td className="justified">{selectedPlanet.composition}</td>
+                  </tr>
+                </>
+              ) : (
+                <>
+                  <tr>
+                    <td>Surface Area</td>
+                    <td>{selectedPlanet.surface_area}</td>
+                  </tr>
+                  <tr>
+                    <td>Diameter</td>
+                    <td>{selectedPlanet.diameter}</td>
+                  </tr>
+                  <tr>
+                    <td>Mass</td>
+                    <td>{selectedPlanet.mass}</td>
+                  </tr>
+                  <tr>
+                    <td>Volume</td>
+                    <td>{selectedPlanet.volume}</td>
+                  </tr>
+                  <tr>
+                    <td>Revolution period</td>
+                    <td>{selectedPlanet.revolution}</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation period</td>
+                    <td>{selectedPlanet.rotation}</td>
+                  </tr>
+                  <tr>
+                    <td>Natural satellites</td>
+                    <td>{selectedPlanet.nat_sat}</td>
+                  </tr>
+                  <tr>
+                    <td>Artificial satellites</td>
+                    <td>{selectedPlanet.art_sat}</td>
+                  </tr>
+                  <tr>
+                    <td>Composition</td>
+                    <td>{selectedPlanet.composition}</td>
+                  </tr>
+                  <tr>
+                    <td>Atmosphere</td>
+                    <td>{selectedPlanet.atmosphere}</td>
+                  </tr>
+                  <tr>
+                    <td>Average Surface Temperature</td>
+                    <td>{selectedPlanet.surface_temp}</td>
+                  </tr>
+                  <tr>
+                    <td>Distance from the sun</td>
+                    <td>{selectedPlanet.sun_dist}</td>
+                  </tr>
+                </>
+              )}
             </table>
           </div>
         )}
-        <button onClick={() => handleAccordionClick("Satellites")}><b>{openSection === "Satellites" ? "Hide Satellites" : "Show Satellites"}</b></button>
-        {openSection === "Satellites" && <div>Sample content for Satellites</div>}
+        {hasMoons && (
+          <>
+            <button onClick={() => handleAccordionClick("Satellites")}>
+              <b>{openSection === "Satellites" ? "Hide Notable Satellites" : "Show Notable Satellites"}</b>
+            </button>
+            {openSection === "Satellites" && 
+            <div>
+              {selectedPlanet.notable_moons?.map((moon, index) => (
+                <>
+                  <h3 className="h3sidebar" key={index}>
+                    {moon}
+                  </h3>
+                  <div className="sidebar-container">
+                      <img
+                        src={selectedPlanet.moons_file_path[index]}
+                        alt={moon}
+                        width="auto"
+                        height="190"
+                      />
+                  </div>
+                </>
+                
+              ))}
+            </div>
+            }
+          </>
+        )}
         <button onClick={() => handleAccordionClick("Fun Facts")}><b>{openSection === "Fun Facts" ? "Hide Fun Facts" : "Show Fun Facts"}</b></button>
-        {openSection === "Fun Facts" && <div>Sample content for Fun Facts</div>}
+        {openSection === "Fun Facts" && 
+          <div>
+            <ul className="justified">
+              {selectedPlanet.fun_facts?.map((facts, index) => (
+                <li key={index}>{facts}</li>
+              ))}
+            </ul>
+          </div>}
       </div>
     </div>
   );
@@ -251,9 +256,6 @@ const App = () => {
       <video className="background-video" autoPlay loop muted>
         <source src="/assets/background.mp4" type="video/mp4" />
       </video>
-      <audio autoPlay loop>
-        <source src="/assets/music.mp3" type="audio/mp3" />
-      </audio>
       {planets.map((planet, index) => (
         <Planet 
           key={planet.name} 

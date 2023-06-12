@@ -284,12 +284,19 @@ button:hover {
   z-index: -1;
 }
 
-#h2sidebar {
+.h3sidebar {
+  color: var(--secondary-color);
   text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 1em;
 }
 
 .sidebar-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.justified {
+  text-align: justify;
 }

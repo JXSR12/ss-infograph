@@ -10,14 +10,19 @@
     "age": "Approximately 4.6 billion years",
     "revolution": "N/A (The Sun is the center of the solar system, so it doesn't revolve around any celestial body)",
     "rotation": "Approximately 24.47 days at the equator, but it varies with latitude",
-    "nat_sat": "None",
-    "art_sat": "None",
+    "nat_sat": "0",
+    "art_sat": "0",
     "composition": "Primarily composed of hydrogen (about 74%) and helium (about 24%), with traces of other elements such as oxygen, carbon, and iron",
     "atmosphere": "The Sun has several layers, including the photosphere, chromosphere, and corona, with different temperatures and densities. It emits a continuous stream of charged particles called the solar wind.",
     "surface_temp": "5,500°C at the surface and 15 million °C at the core",
     "sun_dist": "N/A (The Sun is the center of the solar system)",
     "width": "400",
-    "height": "400"
+    "height": "400",
+    "fun_facts": [
+      "The Sun accounts for 99.86% of the mass in the solar system", 
+      "Over one million Earths could fit inside the Sun",
+      "The Sun is almost a perfect sphere"
+    ]
   },
   {
     "name": "mercury",
@@ -30,12 +35,17 @@
     "age": "4.5 billion years",
     "revolution": "88 days",
     "rotation": "59 days",
-    "nat_sat": "None",
-    "art_sat": "None",
+    "nat_sat": "0",
+    "art_sat": "0",
     "composition": "Mostly composed of iron and silicate rocks",
     "atmosphere": "Very thin and primarily consists of traces of helium, hydrogen, and oxygen",
     "surface_temp": "167°C",
-    "sun_dist": "Approximately 58 million km"
+    "sun_dist": "Approximately 58 million km",
+    "fun_facts": [
+      "Mercury orbits so quickly around the Sun that people used to believed it was another star", 
+      "Mercury is the second densest planet in the solar system",
+      "The orbit of Mercury played an important part in proving Albert Einstein’s theory of General Relativity"
+    ]
   },
   {
     "name": "venus",
@@ -48,12 +58,17 @@
     "age": "4.5 billion years",
     "revolution": "225 days",
     "rotation": "243 days",
-    "nat_sat": "None",
-    "art_sat": "None",
+    "nat_sat": "0",
+    "art_sat": "0",
     "composition": "Primarily composed of carbon dioxide with traces of nitrogen and sulfuric acid",
     "atmosphere": "Thick atmosphere mainly consisting of carbon dioxide with clouds of sulfuric acid",
     "surface_temp": "464°C",
-    "sun_dist": "Approximately 108 million km"
+    "sun_dist": "Approximately 108 million km",
+    "fun_facts": [
+      "One day on Venus is longer than one year!", 
+      "Venus rotate in the opposite direction to other planets",
+      "Venus is the closest planet to Earth"
+    ]
   },
   {
     "name": "earth",
@@ -66,12 +81,19 @@
     "age": "4.5 billion years",
     "revolution": "365.25 days",
     "rotation": "24 hours",
-    "nat_sat": "1 (Moon)",
+    "nat_sat": "1",
     "art_sat": "Various human made satellites",
     "composition": "Primarily composed of iron, oxygen, silicon, and magnesium, with a solid crust and molten inner core",
     "atmosphere": "Nitrogen (78%), oxygen (21%), with traces of other gases",
     "surface_temp": "15°C",
-    "sun_dist": "Approximately 150 million km"
+    "sun_dist": "Approximately 150 million km",
+    "notable_moons": ["The Moon", "The International Space Station", "Hubble Space Telescope"],
+    "moons_file_path": ["assets/moon.png", "assets/iss.png", "assets/hst.png"],
+    "fun_facts": [
+      "Earth has one of the most circular orbits of all the eight planets", 
+      "The abundance of oxygen on Earth comes from the plants of the planet rather than the atmosphere",
+      "Earth is the most dense planet in the solar system"
+    ]
   },
   {
     "name": "mars",
@@ -84,30 +106,37 @@
     "age": "4.6 billion years",
     "revolution": "687 days",
     "rotation": "24.6 hours",
-    "nat_sat": "2 (Phobos and Deimos)",
+    "nat_sat": "2",
     "art_sat": "Various human made satellites",
     "composition": "Primarily composed of iron, magnesium, silicon, and oxygen",
     "atmosphere": "Thin atmosphere mainly consisting of carbon dioxide with traces of nitrogen and argon",
     "surface_temp": "-65°C",
-    "sun_dist": "Approximately 228 million km"
+    "sun_dist": "Approximately 228 million km",
+    "notable_moons": ["Phobos", "Deimos"],
+    "moons_file_path": ["assets/phobos.png", "assets/deimos.png"],
+    "fun_facts": [
+      "The tallest mountain known in the solar system is on Mars", 
+      "Mars experiences huge dust storms which are the largest in our solar system",
+      "Mars does not have a magnetic field"
+    ]
   },
   {
     "name": "the asteroid belt",
     "filepath": "assets/asteroids.png",
-    "description": "The main asteroid belt of our solar system",
-    "surface_area": "-",
-    "diameter": "-",
-    "mass": "-",
-    "volume": "-",
-    "age": "4.5 billion years",
-    "revolution": "-",
-    "rotation": "-",
-    "nat_sat": "-",
-    "art_sat": "-",
-    "composition": "Composed of rock, stone, iron, and nickel",
-    "atmosphere": "-",
-    "surface_temp": "-73°C",
-    "sun_dist": "Approximately 329 - 478 million km"
+    "description": "The asteroid belt is a disk of asteroids located between the orbits of mars and Jupiter. It contains most of the known asteroids, having possibly millions or billions of asteroids. Most of them are as small as pebbles or dust particles, but there are some larger than 100 km.",
+    "nat_sat": "0",
+    "types": [
+      "C-type (carbonaceous), largely composed of carbon, making up 75% of the asteroid belt.", 
+      "S-type (silicate/stony), mainly composed of iron and magnesium silicates, making up 17% of the asteroid belt.",
+      "M-type (metal-rich), composed of nickel and iron, making up 10% of the asteroid belt. There are also many other classes of asteroids which do not fit the 3 main classes."
+    ],
+    "notable": "Ceres, Vesta, Pallas, Hyigea",
+    "composition": "The asteroid belt contains various substances like iron, nickel, titanium, water, oxygen, etc. Asteroid mining is a prospective topic for future space advances. The asteroid belt has between 1,1 to 1,9 million asteroids larger than 1 km, and millions of smaller ones.",
+    "fun_facts": [
+      "There is so much distance between asteroids (around 600,000 miles), it is easy for things to pass through the asteroid belt without hitting anything", 
+      "The total mass of the asteroid belt is only about 4% that of the Earth’s Moon",
+      "The asteroid belt has one known dwarf planet, Ceres"
+    ]
   },
   {
     "name": "jupiter",
@@ -120,12 +149,19 @@
     "age": "4.6 billion years",
     "revolution": "11.9 years",
     "rotation": "9.9 hours",
-    "nat_sat": "95 confirmed moons, including Io, Europa, Ganymede, and Callisto",
-    "art_sat": "None",
+    "nat_sat": "95",
+    "art_sat": "0",
     "composition": "Mostly composed of hydrogen and helium with traces of other compounds",
     "atmosphere": "Thick atmosphere consisting of hydrogen, helium, methane, ammonia, and other compounds",
     "surface_temp": "-110°C",
-    "sun_dist": "Approximately 778 million km"
+    "sun_dist": "Approximately 778 million km",
+    "notable_moons": ["Ganymede", "Callisto", "Io", "Europa"],
+    "moons_file_path": ["assets/ganymede.png", "assets/callisto.png", "assets/io.png", "assets/europa.png"],
+    "fun_facts": [
+      "Jupiter has the shortest day of the eight planets", 
+      "The largest of Jupiter’s moons, Ganymede is the largest moon in the solar system",
+      "Jupiter’s Great Red Spot is an enormous storm that has been raging for over 300 years"
+    ]
   },
   {
     "name": "saturn",
@@ -138,12 +174,19 @@
     "age": "4.6 billion years",
     "revolution": "29.5 years",
     "rotation": "10.7 hours",
-    "nat_sat": "146 confirmed moons, including Titan, Enceladus, and Mimas",
-    "art_sat": "None",
+    "nat_sat": "146",
+    "art_sat": "0",
     "composition": "Mostly composed of hydrogen and helium with traces of other compounds",
     "atmosphere": "Thick atmosphere consisting of hydrogen, helium, methane, and other compounds",
     "surface_temp": "-140°C",
-    "sun_dist": "Approximately 1.4 billion km"
+    "sun_dist": "Approximately 1.4 billion km",
+    "notable_moons": ["Dione", "Titan", "Rhea", "Iapetus"],
+    "moons_file_path": ["assets/dione.png", "assets/titan.png", "assets/rhea.png", "assets/iapetus.png"],
+    "fun_facts": [
+      "Saturn is one of five planets able to be seen with the naked eye. It is also the fifth brightest object in the solar system", 
+      "Saturn gives off more energy than it receives from the Sun",
+      "Saturn is the least dense planet in the solar system"
+    ]
   },
   {
     "name": "uranus",
@@ -156,12 +199,19 @@
     "age": "4.6 billion years",
     "revolution": "84 years",
     "rotation": "17.2 hours",
-    "nat_sat": "27 confirmed moons, including Miranda, Ariel, Umbriel, Titania, and Oberon",
-    "art_sat": "None",
+    "nat_sat": "27",
+    "art_sat": "0",
     "composition": "Mostly composed of hydrogen and helium with traces of methane",
     "atmosphere": "Thin atmosphere mainly consisting of hydrogen, helium, and methane",
     "surface_temp": "-195°C",
-    "sun_dist": "Approximately 2.9 billion km"
+    "sun_dist": "Approximately 2.9 billion km",
+    "notable_moons": ["Ariel", "Umbriel", "Oberon", "Puck"],
+    "moons_file_path": ["assets/ariel.png", "assets/umbriel.png", "assets/oberon.png", "assets/puck.png"],
+    "fun_facts": [
+      "Uranus is often referred to as the “ice giant”", 
+      "Uranus is the second least dense planet in the solar system",
+      "Uranus has 13 currently known rings"
+    ]
   },
   {
     "name": "neptune",
@@ -174,11 +224,18 @@
     "age": "4.6 billion years",
     "revolution": "165 years",
     "rotation": "16.1 hours",
-    "nat_sat": "14 confirmed moons, including Triton and Nereid",
-    "art_sat": "None",
+    "nat_sat": "14",
+    "art_sat": "0",
     "composition": "Mostly composed of hydrogen and helium with traces of methane",
     "atmosphere": "Thick atmosphere consisting of hydrogen, helium, and methane",
     "surface_temp": "-200°C",
-    "sun_dist": "Approximately 4.5 billion km"
+    "sun_dist": "Approximately 4.5 billion km",
+    "notable_moons": ["Triton", "Proteus"],
+    "moons_file_path": ["assets/triton.png", "assets/proteus.png"],
+    "fun_facts": [
+      "Despite being one of the biggest planets, it has a very quick rotation period of just 16,11 earth hours", 
+      "It takes sunlight almost 4 hours 40 minutes to reach Neptune",
+      "Neptune has giant storms like Jupiter, however the storms don’t last as long. Neptune has the fastest winds in the solar system"
+    ]
   }
 ]
