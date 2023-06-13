@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import planetDetails from './planetDetails.json';
 import Accordion from 'react-bootstrap/Accordion';
@@ -113,7 +113,10 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
                   <tr>
                     <td>Types of Asteroid</td>
                     <td>{selectedPlanet.types?.map((type, index) => (
-                      <p key={index} className="justified">{type}</p>
+                      <>
+                        <p key={index} className="justified">{type}</p>
+                        <br/>
+                      </>
                     ))}</td>
                   </tr>
                   <tr>
@@ -186,7 +189,7 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
               <b>{openSection === "Satellites" ? "Hide Notable Satellites" : "Show Notable Satellites"}</b>
             </button>
             {openSection === "Satellites" && 
-            <div>
+            <div className='scrollable-table'>
               {selectedPlanet.notable_moons?.map((moon, index) => (
                 <>
                   <h3 className="h3sidebar" key={index}>
@@ -209,12 +212,12 @@ const Sidebar: React.FC<SidebarProps> = ({ name, onClose }) => {
         )}
         <button onClick={() => handleAccordionClick("Fun Facts")}><b>{openSection === "Fun Facts" ? "Hide Fun Facts" : "Show Fun Facts"}</b></button>
         {openSection === "Fun Facts" && 
-          <div>
+          <div className='scrollable-table'>
             <ul className="justified">
               {selectedPlanet.fun_facts?.map((facts, index) => (
                 <li key={index} 
                     style={{"--bullet-color": getRandomPastelColor(), "--content": index} as React.CSSProperties}
-                    onMouseEnter={() => speak(facts)}>
+                    onMouseDown={() => speak(facts)}>
                   {facts}
                 </li>
               ))}
@@ -263,12 +266,33 @@ const App = () => {
     document.body.classList.remove('sidebar-open');
   };  
 
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [audioPlayed, setAudioPlayed] = useState(false);
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(error => {
+        console.error('Audio playback failed due to', error);
+      });
+      setAudioPlayed(true);
+    }
+  }
+
+  const stopAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setAudioPlayed(false);
+    }
+  }
+
   return (
     <div className="solar-system">
       <div className="sun" onClick={() => handlePlanetClick("sun")}/>
       <video className="background-video" autoPlay loop muted>
         <source src="/assets/fixed_background.mp4" type="video/mp4" />
       </video>
+      {!audioPlayed ? <button className="audio-control audio-control-off" onClick={playAudio}>BGM Off</button> : <button className="audio-control audio-control-on" onClick={stopAudio}>BGM On</button>}
+      <audio ref={audioRef} autoPlay loop src="/assets/music.mp3"></audio>
       {planets.map((planet, index) => (
         <Planet 
           key={planet.name} 

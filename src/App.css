@@ -30,7 +30,7 @@ body {
   position: fixed;
   right: 0; 
   top: 0;
-  height: 100vh;
+  height: 97vh;
   width: 25vw;
   background-color: var(--background-color);
   color: var(--primary-color);
@@ -66,8 +66,9 @@ table {
 }
 
 .scrollable-table {
-  max-height: 40vh;
+  max-height: 26vh;
   overflow-y: auto;
+  padding-right: 1rem;
   scrollbar-width: thin; /* for Firefox */
   scrollbar-color: rgba(77, 168, 218, 0.5) var(--background-color); /* for Firefox */
 }
@@ -126,6 +127,24 @@ button {
 
 button:hover {
   background-color: #2c8fd6;
+}
+
+.audio-control {
+  position: fixed;
+  bottom: 20px;
+  width: fit-content;
+  left: 20px;
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.audio-control-on{
+  background-color: #2c8fd6;
+}
+
+.audio-control-off{
+  background-color: #7d7d7e;
 }
 
 .sun {
@@ -346,3 +365,12 @@ button:hover {
   background: rgba(255, 255, 255, 0.25);
 }
 
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-open {
+  max-height: 800px; /* adjust this value depending on your content size */
+}
